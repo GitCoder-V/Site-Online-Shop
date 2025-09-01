@@ -1,0 +1,64 @@
+$color-text: #fff;
+$text-align_left: left;
+$display-flex: flex;
+.products {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: $display-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+
+  &__item {
+    display: $display-flex;
+    flex-direction: column;
+    flex: 0 1 calc(33.333% - 30px); /* 3 колонки с учетом gap */
+    min-width: 280px; /* Минимальная ширина для мобильных */
+    background-color: $color-text;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    &-title {
+      text-align: $text-align_left;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      margin: 0 0 15px 0;
+      color: #2c3e50;
+      flex-grow: 0; /* Убираем растягивание */
+    }
+    &-description {
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 60px;
+      text-align: $text-align_left;
+      flex-grow: 1; /* Растягиваем описание */
+    }
+    &-button {
+      align-self: center;
+      min-width: 100px;
+      margin-top: auto; /* Прижимаем кнопку к низу */
+      padding: 12px 24px;
+      background-color: #4caf50;
+      color: $color-text;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      text-transform: lowercase;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+  }
+}
